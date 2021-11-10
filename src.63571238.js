@@ -19,4 +19,4 @@ var e,n=arguments[3];!function(t){"object"==typeof exports&&"undefined"!=typeof 
 },{"./apiService":"eQwa","../partials/gallery.hbs":"RoT4","basiclightbox":"BNjD"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("@material-design-icons/font"),require("./js/gallery.js");
 },{"./sass/main.scss":"clu1","@material-design-icons/font":"Tarf","./js/gallery.js":"chxP"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-13-image-finder/src.326d29d8.js.map
+//# sourceMappingURL=/goit-js-hw-13-image-finder/src.63571238.js.map
