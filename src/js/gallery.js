@@ -2,6 +2,14 @@ import ApiService  from './apiService'
 import  galleryItem  from '../partials/gallery.hbs'
 import * as basicLightbox from 'basiclightbox';
 
+const refs = {
+    gallery: document.querySelector('.gallery'),
+    searchForm: document.querySelector('#search-form'),
+    searchInput: document.querySelector('.search-form__input'),
+    anchor: document.querySelector('#anchor'),
+    photoLink: document.querySelectorAll('.photo-link'),
+    loading: document.querySelector('.windows8')
+};
 const api = new ApiService();
 const observer = new IntersectionObserver(observeHandler, {threshold: 0})
 let searchQuerySave = '';
@@ -12,14 +20,6 @@ function observeHandler([entrie]) {
     render(searchQuerySave);
 };
     
-const refs = {
-    gallery: document.querySelector('.gallery'),
-    searchForm: document.querySelector('#search-form'),
-    searchInput: document.querySelector('.search-form__input'),
-    anchor: document.querySelector('#anchor'),
-    photoLink: document.querySelectorAll('.photo-link'),
-    loading: document.querySelector('.windows8')
-};
     
 async function render(searchQuery) {
     try {
@@ -64,6 +64,9 @@ const search = (event) => {
         event.preventDefault();
         api.resetPage();
         refs.gallery.innerHTML = '';
+        if (searchQuery === '') {
+            return
+        }
         observer.unobserve(refs.anchor);
         render(searchQuery);
     }
